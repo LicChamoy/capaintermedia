@@ -17,8 +17,8 @@ if (!isset($_SESSION['carrito']) || count($_SESSION['carrito']) === 0) {
 }
 
 // Obtener las credenciales de PayPal (Sandbox)
-$paypal_client_id = 'AUIm3qilvISvnBV_npK5TskQ0QBeRHIh_SpVCF6oS6s4yrxgC9pAiNBPe3S7eHl5NezusSV4vNStO6sa';
-$paypal_secret = 'EGaKt6WzWu_XWxWPV_uNqWI4y190QRZi8XfqjnkqfDUBgQDXRO0UwDlIpMwFGlUMlKQQ4D_bd-ZjPsdT';
+$paypal_client_id = '';
+$paypal_secret = '';
 $paypal_sandbox_url = 'https://sandbox.paypal.com';
 
 // URL de redirección después del pago (puedes cambiarlo según tu aplicación)
