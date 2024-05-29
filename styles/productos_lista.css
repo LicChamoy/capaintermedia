@@ -1,0 +1,46 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.producto {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.producto img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.producto h3 {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+}
+
+.producto button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.producto button:hover {
+    background-color: #cc0000;
+}

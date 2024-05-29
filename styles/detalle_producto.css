@@ -1,0 +1,122 @@
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.producto-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+}
+
+.imagenes-miniaturas {
+    flex: 1;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.imagenes-miniaturas img,
+.imagenes-miniaturas video {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.imagen-principal {
+    flex: 3;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.imagen-principal img,
+.imagen-principal video {
+    max-width: 100%;
+    max-height: 500px;
+}
+
+.producto-info {
+    flex: 2;
+    padding: 20px;
+}
+
+.producto-info h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.producto-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button.cancelar {
+    background-color: #f44336;
+}
+
+button.cancelar:hover {
+    background-color: #da190b;
+}
+
+/* Estilos para el contenedor de comentarios */
+.comentarios-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para cada comentario individual */
+.comentario {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Estilos para el autor y la fecha del comentario */
+.comentario .autor {
+    font-weight: bold;
+}
+
+.comentario .fecha {
+    color: #666;
+    font-size: 0.8em;
+}
+
+/* Estilos para el contenido del comentario */
+.comentario .contenido {
+    margin-top: 5px;
+}

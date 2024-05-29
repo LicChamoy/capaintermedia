@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi Tienda en Línea</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="left">
+                <a class="home-button" href="../home.php">Inicio</a> <!-- TODO cambiar texto por una imagen de logo-->
+                <div id="clima" class="clima-container"></div>
+            </div>
+            <div class="fill">
+                <div class="search-bar">
+                    <form action="../buscar.php" method="GET"> 
+                        <input type="text" name="q" placeholder="Buscar...">
+                        <button id="lupa" class="search-button"><img id="search-icon" src="../navbar/lupa.png" alt="Buscar"></button>
+                    </form>
+                </div>
+            </div>
+            <div class="right">
+                <div class="left">
+                    <a>
+                        <div class="linea1">
+                            <?php
+                            error_reporting(E_ALL & ~E_NOTICE);
+                            session_start();
+                            if(isset($_SESSION["usuario"])) {
+                                $usuario = $_SESSION["usuario"];
+                                echo "<span onclick='toggleMenu()'>Bienvenido, $usuario</span>";
+                            }
+                            ?>
+                            <div class="user-menu-container">
+                                <div id="menu-content" class="account-list" style="display: none;">
+                                    <ul class="account-menu">
+                                        <?php
+                                        if(isset($_SESSION["usuario"])) {
+                                            echo "<li><a href='../perfil.php'>Perfil</a></li>";
+                                            echo "<li><a href='../chat/mensajes_entrantes.php'>Chats</a></li>";
+                                            echo "<li><a href='../listas.php'>Listas de deseos</a></li>";
+                                            echo "<li><a href='../logout.php' class='logout-link'>Cerrar sesión</a></li>";
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="linea2"><a> </a></span>
+                    </a>
+                </div>
+                <div class="fill">
+                    <a> 
+                        <?php
+                            if(isset($_SESSION["tipo_usuario"])) {
+                                if($_SESSION["tipo_usuario"] == "vendedor") {
+                                    echo "<span class='linea1'><a href='../ventas.php'>Ventas</a></span>";
+                                    echo "<span class='linea2'><a href='../pedidos.php'>Pedidos</a></span>";
+                                } elseif ($_SESSION["tipo_usuario"] == "comprador") {
+                                    echo "<span class='linea1'><a href='../pedidos.php'>Pedidos</a></span>";
+                                    echo "<span class='linea2'><a></a></span>";
+                                }
+                            } else {
+                                echo "<span class='linea1'><a> </a></span>";
+                                echo "<span class='linea2'><a> </a></span>";
+                            }
+                        ?>
+                    </a>
+                </div>
+                <div class="right">
+                    <a class="cart-button" href="../carrito.php">
+                        <div id="carrito-texto">
+                            <span class="linea2"> </span>
+                            <span class='linea2'>Carrito</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function toggleMenu() {
+                var menuContent = document.getElementById('menu-content');
+                if (menuContent.style.display === 'block') {
+                    menuContent.style.display = 'none';
+                } else {
+                    menuContent.style.display = 'block';
+                }
+            }
+
+            function obtenerClima() {
+                const apiKey = 'bd5e378503939ddaee76f12ad7a97608';
+                const ciudad = 'Monterrey';
+                const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric&lang=es`;
+
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok ' + response.statusText);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        const climaContainer = document.getElementById('clima');
+                        const temperatura = data.main.temp;
+                        const descripcion = data.weather[0].description;
+                        climaContainer.innerHTML = `Clima en ${ciudad}: ${temperatura}°C, ${descripcion}`;
+                    })
+                    .catch(error => {
+                        const climaContainer = document.getElementById('clima');
+                        climaContainer.innerHTML = 'No se pudo obtener el clima. Verifique la API key.';
+                        console.error('Error al obtener los datos del clima:', error);
+                    });
+            }
+
+            window.onload = obtenerClima;
+        </script>
+
+        <style>
+            .logout-link {
+                border: none;
+                text-decoration: none;
+                color: inherit;
+            }
+            .clima-container {
+                margin-left: 20px;
+                font-size: 14px;
+                color: #fff;
+            }
+        </style>
+
+    </body>
+</html>

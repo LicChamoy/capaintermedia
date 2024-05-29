@@ -1,0 +1,43 @@
+.container {
+    overflow: auto;
+}
+
+.ofertas {
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    float:left;
+    background-color: #f2f2f2;
+}
+
+.sugerencias {
+    width: 20%;
+    padding: 20px;
+    box-sizing: border-box;
+    float:right;
+    background-color: #e6e6e6;
+}
+.productos-disponibles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.producto {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+}
+
+.producto h3 {
+    margin-top: 10px;
+}
+
+.producto p {
+    margin: 5px 0;
+}

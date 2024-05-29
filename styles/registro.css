@@ -1,0 +1,128 @@
+/* Estilos para el contenedor principal */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    text-align: center;
+}
+
+/*Estilos drop menu*/
+.drop {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
+
+.drop select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none; /* Para eliminar el estilo predeterminado del select en algunos navegadores */
+}
+
+.drop select:focus {
+    outline: none;
+    border-color: #007bff; /* Cambia el color del borde al enfocar */
+}
+
+/* Estilos para los campos de entrada de texto */
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-container p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Estilos para el botón de registro */
+input[type="submit"],
+input[type="button"] {
+    background-color: #FF9900;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: #FF6600;
+}
+
+/*Estilos fecha*/
+input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+input[type="date"]:focus {
+    border-color: #007bff;
+}
+
+/* Estilos para el enlace de inicio de sesión */
+.register-container a {
+    background-color: #FF9900;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.register-container a:hover {
+    background-color: #FF6600;
+}
+
+.register-container a {
+    margin-top: 10px;
+}
+
+/* Estilos para el botón de mostrar/ocultar contraseñas */
+.toggle-password-button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.toggle-password-button:hover {
+    border-color: #007bff;
+    background-color: #f0f0f0;
+}

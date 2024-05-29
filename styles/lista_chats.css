@@ -1,0 +1,27 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.chat {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+.chat a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.chat p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.chats {
+    list-style-type: none;
+    padding: 0;
+}
+

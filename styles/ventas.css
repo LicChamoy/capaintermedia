@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+}
+
+.cart {
+    width: 80%; /* 80% del ancho total */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.actions {
+    width: 20%; /* 20% del ancho total */
+}
+
+.actions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.actions li {
+    margin-bottom: 10px;
+}
+
+.actions a {
+    display: block;
+    padding: 10px;
+    background-color: #5b6979;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.actions a:hover {
+    background-color: #424a53;
+}
